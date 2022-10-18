@@ -5,7 +5,7 @@ namespace cse210_ParachuteMan
 {
     public class wordList
     {
-        public static class originalWord
+        public static class originalWord()
         {
         List<string> listWords = new List<string>
         {
@@ -17,9 +17,10 @@ namespace cse210_ParachuteMan
         Random rnd = new Random();
         int randIndex = rnd.Next(listWords.Count);
         int random = listWords[randIndex];   
-
-
         }
+
+        public static class getWord()
+    
     }           
 }
 
