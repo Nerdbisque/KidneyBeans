@@ -3,11 +3,10 @@ using System.Collections.Generic;
 
 namespace cse210_ParachuteMan
 {
-    public class wordList
+    public class randomWord
     {
-        public static class originalWord()
-        {
-        List<string> listWords = new List<string>
+        
+        private List<string> listWords = new List<string>
         {
             "night","orbit","wrong","liver","clerk",
             "frame","drill","sharp","brave","mango",
@@ -15,12 +14,12 @@ namespace cse210_ParachuteMan
         };
             
         Random rnd = new Random();
+        public string getWord()
+        {
         int randIndex = rnd.Next(listWords.Count);
-        int random = listWords[randIndex];   
+        string random = listWords[randIndex];   
+        return random;
         }
-
-        public static class getWord()
-    
     }           
 }
 

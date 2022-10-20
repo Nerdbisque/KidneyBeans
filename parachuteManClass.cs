@@ -3,10 +3,12 @@ using System.Collections.Generic;
 
 namespace cse210_ParachuteMan
 {
-     static string[] HangDudes(int a)
-        {
-            string[] dudes = { @"
-_ _ _ _ _
+   public class parachuteMan
+   {
+      static string[] display()
+      {
+         string[] parachute = { 
+@"
   
    ____     
   /____\       
@@ -17,8 +19,6 @@ _ _ _ _ _
    / \
 
 ^^^^^^^^^^", @"
-_ _ _ _ _
-  
         
   /____\       
   \    /
@@ -27,10 +27,7 @@ _ _ _ _ _
    /|\
    / \
 
-^^^^^^^^^^", @"
-_ _ _ _ _
-  
-       
+^^^^^^^^^^", @" 
          
   \    /
    \  /
@@ -39,7 +36,6 @@ _ _ _ _ _
    / \
 
 ^^^^^^^^^^", @"
-_ _ _ _ _
       
    \ /
     O
@@ -47,15 +43,14 @@ _ _ _ _ _
    / \
 
 ^^^^^^^^^^", @"
-_ _ _ _ _
 
     x
    /|\
    / \
 
-^^^^^^^^^^", @"
-      return dudes;
+^^^^^^^^^^"
       };
-            
-    }   
+         return parachute;
+      }
+   }
 }
