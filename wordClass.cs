@@ -51,7 +51,8 @@ namespace cse210_ParachuteMan
         }
 
         public void printAnswer(){
-            Console.WriteLine(string.Format("{0}", string.Join("\n ", answer)));
+            Console.WriteLine();
+            Console.WriteLine(string.Format("{0}", string.Join(" ", answer)));
         }
 
     };
