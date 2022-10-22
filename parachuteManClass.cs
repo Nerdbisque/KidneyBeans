@@ -5,7 +5,7 @@ namespace cse210_ParachuteMan
 {
    public class parachuteMan
    {
-      static string[] display()
+      public string display(int which)
       {
          string[] parachute = { 
 @"
@@ -50,7 +50,28 @@ namespace cse210_ParachuteMan
 
 ^^^^^^^^^^"
       };
-         return parachute;
+
+         string changedParachute = parachute[0];
+
+         if (which == 1)
+         {
+
+         }
+         else if (which == 2)  
+         {
+           
+         }
+         else if (which == 3)  
+         {
+            
+         }
+         else if (which == 4)  
+         {
+         
+         }
+         
+         
+         return changedParachute;
       }
    }
 }

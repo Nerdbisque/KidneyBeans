@@ -5,33 +5,55 @@ namespace cse210_ParachuteMan
 {
     public class guess
     {
-        randomWord listClass = new randomWord();
-        
-        public string[] getArray()
-        {
+        private parachuteMan ParachuteMan = new parachuteMan();
+        private int count;
+        private int trueTries = 0;
+           public bool checkInput(List<char> guesses, string currentguess){
+            if (guesses.Contains(currentguess[0])){
+                Console.WriteLine("You already guessed that letter!");
+                return true;
+            }
+            else {
+                return false;
+            }
 
-        string theWord = listClass.getWord();
-        
-        string[] newWord = new string[theWord.Length];
-
-        for (int i = 0; i < theWord.Length; i++)
-        {
-            newWord[i] = theWord.Substring(i, 1); 
-        }
-        
-        string[] hiddenWord = new string[theWord.Length];
-
-        for (int h = 0; h < theWord.Length; h++)
-        {
-            hiddenWord[h] = "_ ";
-        }
-            return hiddenWord;
         }
 
-        public string[] checkGuess(string letter)
+        public bool checkJumper(List<char> wordGuess, int tries){
+            count = 0;
+            for(int i=0;i<wordGuess.Count;i++){
+                if (wordGuess[i] != '_'){
+                    count++;
+                }
+                else{}
+            }
+            if (count == wordGuess.Count){
+                return false;
+                
+            }
+            else if(tries == 4){
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        public void printJumper(int tries)
         {
-    
-            return ;
+            if (tries == trueTries)
+            {
+                Console.Write(ParachuteMan.display(tries));
+            }
+            else if((tries == 1) || (tries == 2) || (tries == 3))
+            {
+                Console.Write(ParachuteMan.display(tries));
+                trueTries++;
+            }
+            else
+            {
+                Console.Write(ParachuteMan.display(tries));
+            }
         }
 
     }
