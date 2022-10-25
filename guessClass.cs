@@ -10,7 +10,7 @@ namespace cse210_ParachuteMan
         public string[] getArray()
         {
 
-        string theWord = listClass.getWord();
+      string theWord = listClass.getWord();
         
         string[] newWord = new string[theWord.Length];
 
