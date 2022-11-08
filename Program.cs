@@ -86,5 +86,13 @@ namespace cse210_ParachuteMan
             return hidden;
         }
 
+        public string[] parachuteMan()
+
+        {
+            if
+            
+            return man; 
+        }
+
     }
 }
