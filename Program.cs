@@ -11,32 +11,33 @@ namespace cse210_ParachuteMan
             Words words = new Words();
             string theWord = words.getWord();
             Parachute parachute = new Parachute(theWord);
-            char[] blanks = parachute.hiddenWord();
+            List<string> blanks = parachute.hiddenWord();
             Step step = new Step(theWord, blanks);
             
         }
     }
     public class Step
     {
-        public Step(string theWord, char[] Blanks)
+        public Step(string theWord, string[] Blanks)
         {
             word = theWord;
-            blanks = Blanks;
+            blanks = Blanks; 
         }
         string word;
-        char[] blanks;
+        string[] blanks;
         
         public void makeGuess()
         {
             Console.WriteLine("Guess a letter [a-z]: ");
-            char guess = (Console.ReadLine().ToCharArray()[0]);
-            char[] wordArray = new char[word.Length];
+            string? guess = Console.ReadLine();
+            List<string> wordArray = new List<string>();
             
             for (int i = 0; i < word.Length; i++) 
             { 
-                wordArray[i] = word[i];
+                wordArray = word
             }
-            foreach (char letter in wordArray)
+            
+            foreach (string letter in wordArray)
             {
                 if (letter == guess)
                 {
@@ -77,22 +78,13 @@ namespace cse210_ParachuteMan
             word = Word;
         }
         string word;
-        public char[] hiddenWord()
+        public string[] hiddenWord()
         {
-            char[] hidden = new char[word.Length];
+            string[] hidden = new string[word.Length];
             for (int p = 0; p < word.Length; p++)
-                hidden[p] = '_';
+                hidden[p] = "_";
 
             return hidden;
         }
-
-        public string[] parachuteMan()
-
-        {
-            if
-            
-            return man; 
-        }
-
     }
 }
