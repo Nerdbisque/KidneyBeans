@@ -8,7 +8,6 @@ namespace cse210_ParachuteMan
         // Simple program to start the program by calling the StartGame method.
         static void Main()
         {
-            int timesWrong = 0;
             int amountOfTimesWrong = 0;
             List<char> currentLettersGuessed = new List<char>();
             int currentLettersRight = 0; 
@@ -17,25 +16,47 @@ namespace cse210_ParachuteMan
             string theWord = words.getWord();
             int lengthOfWordToGuess = theWord.Length;
 
-            Parachute parachute = new Parachute(timesWrong);
-            Step step = new Step(currentLettersGuessed); 
+            Parachute parachute = new Parachute();
+            Step step = new Step(currentLettersGuessed, theWord); 
 
             while(amountOfTimesWrong != 4 && currentLettersRight != lengthOfWordToGuess)
             {
-                step.lettersGuessed();
+                step.makeGuess();
+                parachute.getParachute(amountOfTimesWrong);
             }   
         }
     }
     public class Step
     {
-        public Step(List<char> currentLettersGuessed)
+        public Step(List<char> currentLettersGuessed, string theWord)
         {
             clGuessed = currentLettersGuessed;
+            Word = theWord;
         }
         List<char> clGuessed;
-        public void lettersGuessed()
+        string Word;
+        public int printWord()
         {
-
+            int counter = 0;
+            int rightLetters = 0;
+            foreach (char c in Word)
+            {
+                if(clGuessed.Contains(c))
+                {
+                    Console.Write(c + " ");
+                    rightLetters++;
+                }
+                else
+                {
+                    Console.Write(" ");
+                }
+                counter++;
+            }
+            return rightLetters;
+        }
+        public void printLines(string Word)
+        {
+            
         }
         
         public void makeGuess()
@@ -44,7 +65,7 @@ namespace cse210_ParachuteMan
             char letterGuessed = Console.ReadLine()[0];
             if (clGuessed.Contains(letterGuessed))
             {
-                Console.WriteLine("Already Guessed")
+                Console.WriteLine("Already Guessed");
             }
         }
 
@@ -73,12 +94,7 @@ namespace cse210_ParachuteMan
     }
     public class Parachute
     {
-        public Parachute(int timesWrong)
-        {
-            amountOfTimesWrong = timesWrong;
-        }
-        int amountOfTimesWrong;
-        public void getParachute()
+        public void getParachute(int amountOfTimesWrong)
         {
 
             string[] dudes = { @"
